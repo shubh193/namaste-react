@@ -1,47 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdkY9fBy_IaJ0gCSKtcnhtrnEQW97G1een_A&usqp=CAU"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li className="home">Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Card</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-
-  const { cloudinaryImageId, name, cuisines, locality, deliveryTime } =
-    resData?.data;
-
-  return (
-    <div className="res-card">
-      <img
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
-        className="res-logo"
-        alt="res-image"
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(' ')}</h4>
-      <h5>{locality}</h5>
-      <h4>{deliveryTime} minutes</h4>
-    </div>
-  );
-};
-
 const restaurantList = [
   {
     type: 'restaurant',
@@ -781,32 +737,4 @@ const restaurantList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search-container">
-        <input
-          type="textbox"
-          placeholder="Search for restaurants and foods"
-          className="search-box"
-        />
-        <button className="search-btn">search</button>
-      </div>
-      <div className="res-container">
-        {restaurantList.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout />); //component
+export default restaurantList;
