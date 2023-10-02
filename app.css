@@ -31,6 +31,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .search-btn {
   width: 20%;
   background-color: rgba(255, 166, 0, 0.801);
@@ -74,4 +75,24 @@
   border-radius: 5px;
   background-color: orange;
   box-shadow: 0.3rem 0.3rem 0.4rem 0.1rem red;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  margin: 20px;
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+
+.login-btn {
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.errorImg {
+  margin-top: 3%;
+  margin-left: 20%;
 }
